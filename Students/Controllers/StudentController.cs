@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Students.Entity;
 using Students.Models;
 using Students.Service;
 using System;
@@ -10,7 +11,7 @@ namespace Students.Controllers
 {
     public class StudentController : Controller
     {
-        #region StudentService Inject edildi
+        #region StudentService Inject
         private readonly StudentService _studentService;
         public StudentController(StudentService studentService)
         {
@@ -18,6 +19,7 @@ namespace Students.Controllers
         }
         #endregion
 
+        #region Index action method
         public IActionResult Index()
         {
             var studentEntities = _studentService.GetAllStudents();
@@ -35,5 +37,31 @@ namespace Students.Controllers
             }
             return View(studentViewModelList);
         }
+        #endregion
+
+        #region Create action methods
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(StudentViewModel model)
+        {
+            StudentEntity newStudent = new StudentEntity
+            {
+                Id = model.Id,
+                Name = model.Name,
+                Surname = model.Surname,
+                Classroom = model.Classroom,
+                Teacher = model.Teacher
+            };
+            _studentService.AddStudent(newStudent);
+
+
+            return View();
+        }
+        #endregion
     }
 }
