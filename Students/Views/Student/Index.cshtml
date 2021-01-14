@@ -31,29 +31,30 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Surname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Classroom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Teacher)
-            </td>
-            <td>
-                <a class="btn btn-primary text-white " href="Student/Edit?id=@item.Id">Edit</a>
-                <a class="btn btn-info text-white">Details</a>
-                <a class="btn btn-danger text-white" href="Student/Delete?id=@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Classroom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Teacher)
+                </td>
+                <td>
+                    <a class="btn btn-primary text-white " href="Student/Edit?id=@item.Id">Edit</a>
+                    <a class="btn btn-info text-white" href="Student/Detail?id=@item.Id">Details</a>
+                    <a class="btn btn-danger text-white" href="Student/Delete?id=@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -47,7 +47,7 @@ namespace Students.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(StudentViewModel model)
+        public IActionResult Create(DetailViewModel model)
         {
             StudentEntity newStudent = new StudentEntity
             {
@@ -69,19 +69,22 @@ namespace Students.Controllers
         public IActionResult Edit(int id)
         {
             var entity = _studentService.GetStudents(id);
-            var model = new StudentViewModel()
+            var model = new DetailViewModel()
             {
                 Id = entity.Id,
                 Name = entity.Name,
                 Surname = entity.Surname,
                 Classroom = entity.Classroom,
-                Teacher = entity.Teacher
+                Teacher = entity.Teacher,
+                GradeAvarage=entity.GradeAvarage,
+                HomeworkCompleted=entity.HomeworkCompleted
+
             };
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult Edit(StudentViewModel model)
+        public IActionResult Edit(DetailViewModel model)
         {
             StudentEntity newEntity = new StudentEntity
             {
@@ -89,7 +92,9 @@ namespace Students.Controllers
                 Name = model.Name,
                 Surname = model.Surname,
                 Classroom = model.Classroom,
-                Teacher = model.Teacher
+                Teacher = model.Teacher,
+                GradeAvarage = model.GradeAvarage,
+                HomeworkCompleted = model.HomeworkCompleted
             };
             _studentService.Edit(newEntity);
             return RedirectToAction(nameof(Index), "Student");
@@ -97,7 +102,22 @@ namespace Students.Controllers
         #endregion
 
         #region Detail action method will come here
-        //!!!!!!!
+        public IActionResult Detail(int id)
+        {
+            var entity=_studentService.Detail(id);
+
+            var model = new DetailViewModel()
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Surname = entity.Surname,
+                Classroom = entity.Classroom,
+                Teacher = entity.Teacher,
+                GradeAvarage=entity.GradeAvarage,
+                HomeworkCompleted=entity.HomeworkCompleted               
+            };
+            return View(model);
+        }
         #endregion
 
         #region Delete action method

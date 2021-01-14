@@ -1,4 +1,4 @@
-﻿@model Students.Models.StudentViewModel
+﻿@model Students.Models.DetailViewModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -6,7 +6,7 @@
 
 <h1>Edit</h1>
 
-<h4>StudentViewModel</h4>
+<h4>DetailViewModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -36,6 +36,16 @@
                 <label asp-for="Teacher" class="control-label"></label>
                 <input asp-for="Teacher" class="form-control" />
                 <span asp-validation-for="Teacher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GradeAvarage" class="control-label"></label>
+                <input asp-for="GradeAvarage" class="form-control" />
+                <span asp-validation-for="GradeAvarage" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="HomeworkCompleted" /> @Html.DisplayNameFor(model => model.HomeworkCompleted)
+                </label>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

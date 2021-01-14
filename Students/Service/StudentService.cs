@@ -54,7 +54,11 @@ namespace Students.Service
         {
             var deletedEntity = _studentContext.Students.FirstOrDefault(x => x.Id == id);
             _studentContext.Students.Remove(deletedEntity);
-        } 
+        }
         #endregion
+        public StudentEntity Detail(int id)
+        {
+            return _studentContext.Students.FirstOrDefault(x => x.Id == id);
+        }
     }
 }

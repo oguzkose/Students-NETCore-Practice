@@ -400,5 +400,6 @@ C:\Users\Oğuz KÖSE\source\repos\oguzkose\Students-NETCore-Practice\Students\ob
 C:\Users\Oğuz KÖSE\source\repos\oguzkose\Students-NETCore-Practice\Students\obj\Debug\net5.0\Students.pdb
 C:\Users\Oğuz KÖSE\source\repos\oguzkose\Students-NETCore-Practice\Students\obj\Debug\net5.0\Students.genruntimeconfig.cache
 C:\Users\Oğuz KÖSE\source\repos\oguzkose\Students-NETCore-Practice\Students\obj\Debug\net5.0\Razor\Views\Student\Index.cshtml.g.cs
-C:\Users\Oğuz KÖSE\source\repos\oguzkose\Students-NETCore-Practice\Students\obj\Debug\net5.0\Razor\Views\Student\Create.cshtml.g.cs
+C:\Users\Oğuz KÖSE\source\repos\oguzkose\Students-NETCore-Practice\Students\obj\Debug\net5.0\Razor\Views\Student\Detail.cshtml.g.cs
 C:\Users\Oğuz KÖSE\source\repos\oguzkose\Students-NETCore-Practice\Students\obj\Debug\net5.0\Razor\Views\Student\Edit.cshtml.g.cs
+C:\Users\Oğuz KÖSE\source\repos\oguzkose\Students-NETCore-Practice\Students\obj\Debug\net5.0\Razor\Views\Student\Create.cshtml.g.cs

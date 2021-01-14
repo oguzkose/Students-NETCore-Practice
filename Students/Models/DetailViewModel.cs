@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Students.Entity
+namespace Students.Models
 {
-    public class StudentEntity
+    public class DetailViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,6 +14,5 @@ namespace Students.Entity
         public string Teacher { get; set; }
         public int GradeAvarage { get; set; }
         public bool HomeworkCompleted { get; set; }
-
     }
 }

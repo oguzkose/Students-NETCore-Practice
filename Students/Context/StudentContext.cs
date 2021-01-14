@@ -19,7 +19,19 @@ namespace Students.Context
                     Name="Oğuz",
                     Surname="Köse",
                     Classroom="1-A",
-                    Teacher="Ramazan Kartal"
+                    Teacher="Ramazan Kartal",
+                    GradeAvarage=80,
+                    HomeworkCompleted=true
+                },
+                new StudentEntity
+                {
+                    Id=2,
+                    Name="Ahmet",
+                    Surname="Yılmaz",
+                    Classroom="1-B",
+                    Teacher="Mehmet Öğretmen",
+                    GradeAvarage=75,
+                    HomeworkCompleted=false
                 }
             };
         }
