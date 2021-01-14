@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Students",
+    "\\Students\\Controllers"
   ],
-  "PreviewInSolutionExplorer": false
+  "PreviewInSolutionExplorer": true
 }
