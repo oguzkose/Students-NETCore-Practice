@@ -28,8 +28,33 @@ namespace Students.Service
         public void AddStudent(StudentEntity entity)
         {
             _studentContext.Students.Add(entity);
+        }
+
+
+        #endregion
+
+        #region Method that get Students by id
+        public StudentEntity GetStudents(int id)
+        {
+            return _studentContext.Students.FirstOrDefault(x => x.Id == id);
+        }
+        #endregion
+
+        #region Method of editing Students
+        internal void Edit(StudentEntity newEntity)
+        {
+            var entity = _studentContext.Students.FirstOrDefault(x => x.Id == newEntity.Id);
+            _studentContext.Students.Remove(entity);
+            _studentContext.Students.Add(newEntity);
         } 
         #endregion
 
+        #region Method of deleting Students
+        internal void Delete(int id)
+        {
+            var deletedEntity = _studentContext.Students.FirstOrDefault(x => x.Id == id);
+            _studentContext.Students.Remove(deletedEntity);
+        } 
+        #endregion
     }
 }

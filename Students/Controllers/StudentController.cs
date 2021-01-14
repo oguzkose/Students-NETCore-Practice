@@ -63,5 +63,49 @@ namespace Students.Controllers
             return View();
         }
         #endregion
+
+        #region Edit action methods
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var entity = _studentService.GetStudents(id);
+            var model = new StudentViewModel()
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Surname = entity.Surname,
+                Classroom = entity.Classroom,
+                Teacher = entity.Teacher
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(StudentViewModel model)
+        {
+            StudentEntity newEntity = new StudentEntity
+            {
+                Id = model.Id,
+                Name = model.Name,
+                Surname = model.Surname,
+                Classroom = model.Classroom,
+                Teacher = model.Teacher
+            };
+            _studentService.Edit(newEntity);
+            return RedirectToAction(nameof(Index), "Student");
+        }
+        #endregion
+
+        #region Detail action method will come here
+        //!!!!!!!
+        #endregion
+
+        #region Delete action method
+        public IActionResult Delete(int id)
+        {
+            _studentService.Delete(id);
+            return RedirectToAction(nameof(Index), "Student");
+        } 
+        #endregion
     }
 }

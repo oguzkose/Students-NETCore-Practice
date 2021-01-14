@@ -49,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.Teacher)
             </td>
             <td>
-                <a class="btn btn-primary text-white">Edit</a>
+                <a class="btn btn-primary text-white " href="Student/Edit?id=@item.Id">Edit</a>
                 <a class="btn btn-info text-white">Details</a>
-                <a class="btn btn-danger text-white">Delete</a>
+                <a class="btn btn-danger text-white" href="Student/Delete?id=@item.Id">Delete</a>
             </td>
         </tr>
 }
